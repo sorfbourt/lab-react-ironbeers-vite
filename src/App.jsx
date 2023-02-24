@@ -6,6 +6,7 @@ import NewBeer from "./pages/NewBeer"
 import RandomBeers from "./pages/RandomBeers"
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
+import BeerDetails from './pages/BeerDetails'
 
 
 
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/beers" element={<AllBeers beers={beers}/>}/>
+        <Route path='beers/:id' element={<BeerDetails beers={beers}/>}/>
         <Route path="/new-beer" element={<NewBeer/>}/>
         <Route path="/random-beer" element={<RandomBeers/>}/>
 
