@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import Header from '../components/Header'
 
 function BeerDetails() {
 let {id} = useParams()
@@ -23,9 +24,10 @@ useEffect(()=>{
 
 
   return (
-    <div><h1>BeerDetails</h1> 
+    <div>
+      <Header/>
+      <h1>{singleBeer.name}</h1> 
             <img src={singleBeer.image_url} alt={singleBeer.name} width="30"></img>
-          <h3>{singleBeer.name}</h3>
           <h4>{singleBeer.tagline}</h4>
           <p><b>First Brewed: </b>{singleBeer.first_brewed}</p>
           <p><b>Attenuation Level: </b>{singleBeer.attenuation_level}</p>
