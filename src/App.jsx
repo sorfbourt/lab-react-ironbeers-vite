@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import './App.css'
-import Home from "./components/Home"
-import AllBeers from "./components/AllBeers"
-import NewBeer from "./components/NewBeer"
-import RandomBeers from "./components/RandomBeers"
+import Home from "./pages/Home"
+import AllBeers from "./pages/AllBeers"
+import NewBeer from "./pages/NewBeer"
+import RandomBeers from "./pages/RandomBeers"
 import { Routes, Route } from 'react-router-dom'
+
+
 
 function App() {
 
   return (
     <div className="App">
-      <h1>Hi</h1>
+      
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/beers" element={<AllBeers/>}/>
