@@ -24,6 +24,7 @@ function App() {
     fetchData()
   }, [])
 
+
   useEffect (()=>{
     console.log("beers when beers state changes", beers)
   }, [beers])
