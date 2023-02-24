@@ -29,12 +29,34 @@ function App() {
     console.log("beers when beers state changes", beers)
   }, [beers])
 
+  const [search, setSearch] = useState("")
+
+  const handleSearch = (event)=>{
+    setSearch(event.target.value)
+    console.log("search: ", search)
+
+  }
+
+
+  const fetchSearchData = async () => {
+    const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/search?q=${search}`)
+    console.log("search response", response.data)
+    setBeers(response.data)
+  }
+
+  useEffect (()=>{
+    fetchSearchData()
+  }, [search])
+
+
+
+
   return (
     <div className="App">
       
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/beers" element={<AllBeers beers={beers}/>}/>
+        <Route path="/beers" element={<AllBeers beers={beers} handleSearch={handleSearch}/>}/>
         <Route path='beers/:id' element={<BeerDetails beers={beers}/>}/>
         <Route path="/new-beer" element={<NewBeer/>}/>
         <Route path="/random-beer" element={<RandomBeers/>}/>

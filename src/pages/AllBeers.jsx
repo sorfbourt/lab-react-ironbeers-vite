@@ -1,16 +1,7 @@
-import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 
-function AllBeers({beers}) {
-
-  const [search, setSearch] = useState("")
-
-  const handleSearch = (event)=>{
-    setSearch(event.target.value)
-    console.log("search: ", search)
-
-  }
+function AllBeers({beers, handleSearch}) {
 
 
   return (
@@ -22,14 +13,14 @@ function AllBeers({beers}) {
       </form>
       <h1>All Beers</h1>
 
-      {beers.filter(beer =>{
+      {beers/* .filter(beer =>{
         if(search===""){
           return beer
         }
         if(beer.name.toLowerCase().includes(search.toLowerCase())){
           return beer
         }
-      })
+      }) */
       .map((beer, index)=>{
         return (
           <div key={beer._id}>

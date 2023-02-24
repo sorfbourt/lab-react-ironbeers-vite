@@ -30,7 +30,7 @@ const handleSubmit = async (event) =>{
   setAttenuationLevel(0)
   setContributedBy('')
 
-  navigate('/beer')
+  navigate('/beers')
 }
 
 
