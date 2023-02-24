@@ -6,7 +6,7 @@ function Header() {
     <div style={{width:'100vw', backgroundColor: "#3DC4FC"}}>
 
     <Link to="/">
-    HOUSE
+    HOME
     </Link>
 
 
