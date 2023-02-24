@@ -26,9 +26,8 @@ useEffect(()=>{
     <div>
       <Header/>
       
-      <h1>BeerDetails</h1> 
+      <h1>{randomBeer.name} </h1> 
             <img src={randomBeer.image_url} alt={randomBeer.name} width="30"></img>
-          <h3>{randomBeer.name}</h3>
           <h4>{randomBeer.tagline}</h4>
           <p><b>First Brewed: </b>{randomBeer.first_brewed}</p>
           <p><b>Attenuation Level: </b>{randomBeer.attenuation_level}</p>
